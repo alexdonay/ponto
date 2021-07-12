@@ -1,0 +1,13 @@
+<div id='frmlogin' class="frmlogin"  >
+    <form id= 'empresa' method="post" action="/alterasenha">
+        <label for = "login">Login</label> </br>
+            <input required id='login' name ='login'type = 'text' class="inputform" value= {{usuario}} /></br>
+        <label for = "senha">Senha</label> </br>
+            <input id='senha' type = 'password' name='senha' class="inputform"/></br>
+        <label for = "confsenha">Confirma Senha</label> </br>
+            <input id='confsenha' type = 'password' type = 'text' name='confsenha' class="inputform"/></br>
+        <input type ='submit' value = 'Grava' class = 'submit' id= 'entrar'>
+        <input hidden=true type="text" name='id' value={{id}}>
+    </form>
+         <p>{{message}}</p>
+</div>

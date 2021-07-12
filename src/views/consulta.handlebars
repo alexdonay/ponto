@@ -1,0 +1,73 @@
+<h1>Livro Ponto</h1>
+<form action="/updateponto" method="post">
+<p name ='empresa' value ={{dados.empresa.razao_social}}>Empresa:{{dados.empresa.razao_social}}</p>
+<p name='empregado' value= {{dados.nome}}>Empregado:{{dados.nome}}</p>
+<p name= 'periodo' value ={{competencia}}>Periodo: {{competencia}}</p>
+<table id='ponto'>
+    <tr>
+        <th>Data</th>
+        <th>Entrada</th>
+        <th>Saida</th>
+        <th>Entrada</th>
+        <th>Saida</th>
+        <th>Total</th>
+        <th>Normais</th>
+        <th>50%</th>
+        <th>100%</th>
+        <th>Noturnas</th>
+        <th>Faltas</th>
+        <Th>Justificativa</Th>
+    </tr>
+{{#each ponto}}
+    <tr>
+        <td><input type="Date" value={{{trimString data}}} name='data'></td>
+        <td><input type="time" value={{entrada}} name='entrada'> </td>
+        <td><input type="time" value={{entradaintervalo}} name='entradaintervalo'></td>
+        <td><input type="time" value={{saidaintervalo}} name='saidaintervalo'></td>
+        <td><input type="time" value={{saida}} name='saida'></td>
+        <td><input name='hrtrabalhada' type="time" value={{hrtrabalhada}} name='hrtrabalhada'></td>
+        <td><input name ='hrnormal'type="time" value={{hrnormal}} name='hrnormal'></td>
+        <td><input name ='hr50'type="time" value={{hr50}} name= 'hr50'></td>
+        <td><input name ='hr100'type="time" value={{hr100}} name='hr100'></td>
+        <td><input name ='hrnoturna' type="time" value={{hrnoturna}} name= 'hrnoturna'></td>
+        <td><input name ='falta' type="time" value={{falta}} name='falta'></td>
+        <td><select name='justificativa' name = 'justificativa'>
+                {{#ifvalue justificativa value = 0}}
+                    <option value="0">Normal</option>
+                    <option value="1">Folga</option>
+            {{else}}
+                    <option value="0">Normal</option>
+                    <option value="1" selected>Folga</option>
+            {{/ifvalue}}
+        </select></td>
+        <td><input type="text" name="id" value ={{id}} hidden></td>
+    </tr>
+    
+{{/each}}
+</table>
+<table id='resultado'>
+            <tr>
+                <th>Horas Normais</th>
+                <th>Horas Trabalhadas</th>
+                <th>Hr. 50%</th>
+                <th>Hr. 100%</th>
+                <th>Hr. falta</th>
+                <th>Hr. Noturnas</th>
+            </tr>
+            <tr>
+                <td><input type="text" id='hn' disabled = 'true' value={{hrnormais}}></td>
+                <td><input type="text" id='ht'disabled = 'true' value ={{hrtrabalhadas}}></td>
+                <td><input type="text" id='h50' disabled = 'true'value={{hr50}}></td>
+                <td><input type="text" id='h100'disabled = 'true' value={{hr100}}></td>
+                <td><input type="text" id='hf' disabled = 'true' value={{hrfaltas}}></td>
+                <td><input type="text" id='hnot' disabled = 'true'value={{hrnoturnas}}></td>
+            </tr>
+        </table>
+        
+    </div>
+    <button>Atualiza</button>
+    <input type="submit" formaction='/excluirponto' value='Excluir'>
+  <input type="submit" formaction="/export" value='Exporta XLSX'> 
+    </form>
+    <p></p>
+    

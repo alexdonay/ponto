@@ -1,0 +1,35 @@
+<h1>Consulta Empregados</h1>
+<div id='dados'>
+
+<input type="text" id="myInput" onkeyup="lookup()" placeholder="Digite o Nome" title="Digite o Nome">
+</div>
+<table id="tabela_empregados">
+    <tr>
+                    <th>Código</th>
+                    <th>Nome</th>
+                    <th>CPF</th>
+                    <th>Cód. Empresa</th>
+                    <th>Consulta Empregado</th>
+                    <th>Excluir</th>
+                    <th>Inclui Ponto</th>
+                    <th>Consulta Pontos</th>
+                   
+                </tr>
+                {{#each empregados}}
+                <tr>
+                   <td>{{id}}</td>
+                   <td>{{nome}}</td>
+                   <td>{{cpf}} </td> 
+                   <td>{{idempresa}} </td>
+                   <td><a href ='/consultafuncionario{{id}}'>Consulta</a> </td>
+                   <td><a href ='/excluifuncionario{{id}}'>Excluir </a> </td>
+                   <td><a href ='/incluiponto{{id}}'>Inclui Ponto </a> </td>
+                   <td><a href ='/consultaponto{{id}}'>Consulta Ponto </a> </td>
+                </tr>
+                {{/each}}
+                
+            </table>
+        </div>
+    </form>
+
+</table>

@@ -1,0 +1,36 @@
+<h1>Cadastro de Empresa</h1>
+    <form  id= 'empresa' method="post" action="/empresas">
+    <div class='frmempresa'id = 'dados'>
+        <label for = "razao:empresa">Razão Social</label> <br>
+        <input required id='razao:empresa' name ='razao_social'type = 'text' size="30" maxlength="30"/> <br>
+        <label for = "cnpj:empresa">CNPJ</label> <br>
+        <input id='cnpj:empresa' type = 'text' name='cnpj' size="15" maxlength="18" data-js ="cnpj"/><br>
+        <input type ='submit' value = 'Grava' class='submit' id= 'btgravaempresa'formaction='/gravaempresa'>
+    </div>
+    <div id ='controles'>
+        
+        
+               
+        
+    </div>
+     <table id= 'tbempresa'>
+                <tr>
+                    <th>Código</th>
+                    <th>Razão Social</th>
+                    <th>Cnpj</th>
+                    <th>Excluir</th>
+                </tr>
+                {{#each empresas}}
+                <tr>
+                    <td>{{id}}</td>
+                    
+                   <td>{{razao_social}} </td>
+                   <td>{{cnpj}} </td>
+
+                    <td><a href ='/excluiempresa{{id}}'>Excluir </a> </td>
+                </tr>
+                {{/each}}
+                
+            </table>
+           
+</form>

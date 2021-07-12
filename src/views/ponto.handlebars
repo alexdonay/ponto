@@ -1,0 +1,192 @@
+<h1>Livro Ponto</h1>
+
+<form action="/gravaponto" method="post">
+
+    <div id='divponto'>
+        
+        <label for ='razao'>Razão Social:</label>
+        <a id="razao" size ="30" maxlength="30">{{empregados.empresa.razao_social}} </a><br><br>
+        
+        <label for = "nome" >Nome: </label>
+        <a id="nome">{{empregados.nome}} <a/><br><br>
+        <label for="periodo">Período:</label>
+        <input type="text" id="periodo" size="3px" maxlength="7" data-js="periodo" name="competencia">
+    
+    </div>
+    <div id= "resultado" >
+        <table id="resultado2" hidden='true'>
+            <tr>
+                <th>Horas Normais</th>
+                <th>Horas Trabalhadas</th>
+                <th>Hr. 50%</th>
+                <th>Hr. 100%</th>
+                <th>Hr. falta</th>
+                <th>Hr. Noturnas</th>
+            </tr>
+            <tr>
+                <td><input type="text" id='hn' disabled = 'true'></td>
+                <td><input type="text" id='ht'disabled = 'true'></td>
+                <td><input type="text" id='h50' disabled = 'true'></td>
+                <td><input type="text" id='h100'disabled = 'true'></td>
+                <td><input type="text" id='hf' disabled = 'true'></td>
+                <td><input type="text" id='hnot' disabled = 'true'></td>
+            </tr>
+        </table>
+    </div>
+    <div id = 'hidden'>
+        <table id='horario' hidden=true>
+            <tr>
+                <th>Dia da semana</th>
+                <th>Justificativa</th>
+                <th>Entrada</th>
+                <th>Entrada do Intervalo</th>
+                <th>Saída do Intervalo</th>
+                <th>Saída</th>
+            </tr> 
+            <tr>
+                <td>Segunda-Feira</td>
+                <td><select name='0justificativa' id ='0justificativa' value={{empregados.segjustificativa}}>
+                    {{#ifvalue empregados.segjustificativa value=0}}
+                        <option value="0">Normal</option>
+                        <option value="1">Folga</option>
+                        {{else}}
+                            <option value="0">Normal</option>
+                            <option value="1" selected>Folga</option>
+                    {{/ifvalue}}
+                    </select></td>
+                <td><input type='time' id ='Entrada:0'name='segentrada'value={{empregados.segentrada}}></td>
+                <td><input type='time' id ='Entradaintervalo:0' name='segentradainter'value={{empregados.segentradainter}}></td>
+                <td><input type='time' id ='saidaintervalo:0'name='segsaidainter'value={{empregados.segsaidainter}}></td>
+                <td><input type='time' id ='saida:0'name='saida:0'value={{empregados.segsaida}}></td>
+                <td><input type='time' id ='horasnormais:0'name='horasnormais:0'value={{horasNormais empregados.segentrada empregados.segentradainter empregados.segsaidainter empregados.segsaida }}></td>
+            </tr>
+            <tr>
+                <td>terca-Feira</td>
+                <td><select name='1justificativa' id ='1justificativa'value={{empregados.terjustificativa}}>
+                    {{#ifvalue empregados.terjustificativa value=0}}
+                    <option value="0">Normal</option>
+                    <option value="1">Folga</option>
+                    {{else}}
+                    <option value="0">Normal</option>
+                    <option value="1" selected>Folga</option>
+                    {{/ifvalue}}
+                    </select></td>
+                <td><input type='time' id ='Entrada:1'name='terentrada'value={{empregados.terentrada}}></td>
+                <td><input type='time' id ='Entradaintervalo:1'name='terentradainter'value={{empregados.terentradainter}}></td>
+                <td><input type='time' id ='saidaintervalo:1'name='tersaidainter'value={{empregados.tersaidainter}}></td>
+                <td><input type='time' id ='saida:1'name='tersaida'value={{empregados.tersaida}}></td>
+                <td><input type='time' id ='horasnormais:1'name='horasnormais:1'value={{horasNormais empregados.terentrada empregados.terentradainter empregados.tersaidainter empregados.tersaida }}></td>
+            </tr>
+            <tr>
+                <td>Quarta-Feira</td>
+                <td><select name='2justificativa'id ='2justificativa' value={{empregados.quajustificativa}}>
+                     {{#ifvalue empregados.quajustificativa value=0}}
+                    <option value="0">Normal</option>
+                    <option value="1">Folga</option>
+                    {{else}}
+                    <option value="0">Normal</option>
+                    <option value="1" selected>Folga</option>
+                    {{/ifvalue}}
+                </select></td>
+                <td><input type='time' id ='Entrada:2'name='quaentrada'value={{empregados.quaentrada}}></td>
+                <td><input type='time' id ='Entradaintervalo:2'name='quaentradainter'value={{empregados.quaentradainter}}></td>
+                <td><input type='time' id ='saidaintervalo:2'name='quasaidainter'value={{empregados.quasaidainter}}></td>
+                <td><input type='time' id ='saida:2'name='quasaida'value={{empregados.quasaida}}></td>
+                <td><input type='time' id ='horasnormais:2'name='horasnormais:2'value={{horasNormais empregados.quaentrada empregados.quaentradainter empregados.quasaidainter empregados.quasaida }}></td>
+            </tr>
+            <tr>
+                <td>Quinta-Feira</td>
+                <td><select name='3justificativa' id ='3justificativa' value={{empregados.quijustificativa}}>
+                    {{#ifvalue empregados.quijustificativa value=0}}
+                    <option value="0">Normal</option>
+                    <option value="1">Folga</option>
+                    {{else}}
+                    <option value="0">Normal</option>
+                    <option value="1" selected>Folga</option>
+                    {{/ifvalue}}
+                    </select>
+                </td>
+                <td><input type='time' id ='Entrada:3' name='quientrada'value={{empregados.quientrada}}></td>
+                <td><input type='time' id ='Entradaintervalo:3' name='quientradainter'value={{empregados.quientradainter}}></td>
+                <td><input type='time' id ='saidaintervalo:3'name='quisaidainter'value={{empregados.quisaidainter}}></td>
+                <td><input type='time' id ='saida:3'name='quisaida'value={{empregados.quisaida}}></td>
+                <td><input type='time' id ='horasnormais:3'name='horasnormais:3'value={{horasNormais empregados.quientrada empregados.quientradainter empregados.quisaidainter empregados.quisaida }}></td>
+            </tr>
+            <tr>
+                <td>Sexta-Feira</td>
+                <td><select name='4justificativa' id ='4justificativa' value={{empregados.sexjustificativa}}>
+                    {{#ifvalue empregados.sexjustificativa value=0}}
+                    <option value="0">Normal</option>
+                    <option value="1">Folga</option>
+                    {{else}}
+                    <option value="0">Normal</option>
+                    <option value="1" selected>Folga</option>
+                    {{/ifvalue}}
+                </select></td>
+                <td><input type='time' id ='Entrada:4' name='sexentrada'value={{empregados.sexentrada}}></td>
+                <td><input type='time' id ='Entradaintervalo:4'name='sexentradainter'value={{empregados.sexentradainter}}></td>
+                <td><input type='time' id ='saidaintervalo:4'name='sexsaidainter'value={{empregados.sexsaidainter}}></td>
+                <td><input type='time' id ='saida:4'name='sexsaida'value={{empregados.sexsaida}}></td>
+                <td><input type='time' id ='horasnormais:4'name='horasnormais:4'value={{horasNormais empregados.sexentrada empregados.sexentradainter empregados.sexsaidainter empregados.sexsaida }}></td>     
+            </tr>
+            <tr>
+                <td>Sábado</td>
+                <td><select name='5justificativa'id ='5justificativa'value ={{empregados.sabjustificativa}}>
+                    {{#ifvalue empregados.sabjustificativa value=0}}
+                    <option value="0">Normal</option>
+                    <option value="1">Folga</option>
+                    {{else}}
+                    <option value="0">Normal</option>
+                    <option value="1" selected>Folga</option>
+                    {{/ifvalue}}
+                    </select></td>
+                <td><input type='time' id ='Entrada:5'name='sabentrada'value={{empregados.sabentrada}}></td>
+                <td><input type='time' id ='Entradaintervalo:5'name='sabentradainter'value={{empregados.sabentradainter}}></td>
+                <td><input type='time' id ='saidaintervalo:5'name='sabsaidainter'value={{empregados.sabsaidainter}}></td>
+                <td><input type='time' id ='saida:5'name='sabsaida'value={{empregados.sabsaida}}></td>
+                <td><input type='time' id ='horasnormais:5'name='horasnormais:5'value={{horasNormais empregados.sabentrada empregados.sabentradainter empregados.sabsaidainter empregados.sabsaida }}></td>          
+            </tr>
+            <tr>
+                <td>Domingo</td>
+                <td><select name='6justificativa' id ='6justificativa' value={{empregados.domjustificativa}}>
+                    {{#ifvalue empregados.domjustificativa value=0}}
+                    <option value="0">Normal</option>
+                    <option value="1">Folga</option>
+                    {{else}}
+                    <option value="0">Normal</option>
+                    <option value="1" selected>Folga</option>
+                    {{/ifvalue}}
+                    </select></td>
+                <td><input type='time' id ='Entrada:6' name='domentrada'value={{empregados.domentrada}}></td>
+                <td><input type='time' id ='Entradaintervalo:6' name='domentradainter'value={{empregados.domentradainter}}></td>
+                <td><input type='time' id ='saidaintervalo:6'name='domsaidainter'value={{empregados.domsaidainter}}></td>
+                <td><input type='time' id ='saida:6'name='domsaida'value={{empregados.domsaida}}></td>
+                <td><input type='time' id ='horasnormais:6'name='horasnormais:6'value={{horasNormais empregados.domentrada empregados.domentradainter empregados.domsaidainter empregados.domsaida }}></td>
+            </tr>
+        </table>
+    </div>
+    <div id= 'feriados'>
+        <table id='tbferiados' hidden=true>
+            {{#each feriados}}
+            <tr>
+                <td> {{{trimString data}}}</td>
+            </tr>
+            {{/each}}
+        </table>
+       
+    </div>
+     <table id ='tbpontos'hidden>
+        {{#each pontos}}
+    <tr>
+        <td> {{competencia}}</td>
+        
+    </tr>
+{{/each}}
+</table>
+<input type="text" name= 'ultimodia'id='ultimodia'>
+<input type ='submit' value = 'Grava' class= 'submitponto' id= 'gravaponto' formaction="/gravaponto" hidden=true >
+</form>
+    
+    <input name= 'idfunc' value = {{empregados.id}} hidden>
+    <button type="button" class= 'submitponto'id= 'geraponto2' onclick= "geraponto() ">Gera Ponto</button>
+    

@@ -1,0 +1,18 @@
+<h1>Consulta Ponto</h1>
+<input name='idemp' type='text' value={{dados.id}} />
+<p>Funcionário:{{dados.nome}} </p>
+<p>Empresa:{{dados.empresa.razao_social}}</p>
+<form action="/consultaponto" method="post">
+<table>
+    <tr>
+        <th>Periodo</th>
+        <th>Consulta</th>
+    </tr>
+{{#each pontos}}
+    <tr>
+        <td> <input type="text" name="competencia" value={{competencia}} />
+        <td> <a href="/consulta/{{idfunc}}/{{competencia}}">Consulta</a></td>
+    </tr>
+{{/each}}
+</table>
+</Form>

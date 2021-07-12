@@ -1,0 +1,22 @@
+<h1>Cadastro de Usuários</h1>
+ <a href="/cadastrarusuario" id='cadastrar'>Cadastrar Usuário</a>
+<table id= 'usuarios'>
+                <tr>
+                    <th>Usuário</th>
+                    <th>Alterar</th>
+                    <th>Excluir</th>
+                </tr>
+                {{#each usuarios}}
+                <tr>
+                    <td>{{user}}</td>
+                    <td><a href ='/alterausuario{{id}}'>Altera </a> </td>
+                    <td><a href ='/excluiusuario{{id}}'>Excluir </a> </td>
+                </tr>
+                {{/each}}
+                
+            </table>
+           
+</form>
+<div>
+   
+</div>

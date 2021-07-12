@@ -1,0 +1,479 @@
+*{
+  margin: 0; 
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 19pt;
+}
+a:link {
+  text-decoration: none;
+  color: black;
+}
+
+a:visited {
+  text-decoration: none;
+  color: black;
+}
+
+a:hover {
+  text-decoration: none;
+  color: black;
+}
+
+a:active {
+  text-decoration: none;
+  color: black;
+}
+table {
+  border-collapse: separate;
+  text-indent: initial;
+  border-spacing: 1px;
+}
+.menu ul{
+  position:relative;
+  background: gray;
+  z-index: 9999;
+}
+.menu ul li{
+  display: inline-block;
+}
+.menu ul li a{
+  text-decoration: none;
+  color: black;
+  display:block;
+}
+.menu ul li:hover{
+  background: rgb(206, 205, 205);
+
+}
+.menu ul ul{
+  position: absolute;
+  min-width: 200px;
+  display: none;
+  background: rgb(90, 90, 90);
+}  
+.menu ul ul li{
+  display: block;
+  background: rgb(90, 90, 90);
+}
+.menu ul li:hover ul{
+  display: block;
+
+}
+h1{
+  text-align: center;
+  font-size: 26pt;
+} 
+body{
+  background: rgb(182, 180, 180);
+  color: black;
+ 
+}
+
+table tr:nth-child(even) td{background-color: rgb(196, 193, 202)}
+table tr th{background-color: rgb(131, 127, 127)}
+tbody tr:nth-child(even)
+{
+  background: rgb(226, 226, 226);
+}
+tbody{
+  height: 21px;
+  padding: 0px;
+  border: 0px;
+
+  border-spacing: 0px;
+}
+
+tbody td {
+  height: 21px;
+  border: 0px;
+  padding-left: 1px;
+  padding-right: 1px;
+  background-color: #EFEFEF;
+  text-decoration: none;
+  color: black;
+}
+tbody tr th {
+  background-color: #DADADA;
+  height: auto;
+  padding: 0px;
+  border: 0px;
+  text-align: center;
+  color: black;
+  
+ 
+}
+table tr th a {
+  border-collapse: separate;
+  text-indent: initial;
+  border-spacing: 2px;
+  width: 12px;
+  font-weight: bold;
+}
+th {
+  display: table-cell;
+  vertical-align: inherit;
+  font-weight: bold;
+  color: black;
+  
+} 
+
+input:disabled {
+  background-color: white;
+  border: none;
+  color: black;
+  
+}
+input[type="time" i] {
+  
+  
+  min-inline-size: -webkit-fill-available;
+  text-align: center;
+  
+ 
+  
+  
+  
+}
+input[type="time"]::-webkit-calendar-picker-indicator {
+  background: none;
+  width: 0px;
+  display: none;
+}
+input[type="date" i] {
+  align-items: center;
+  display: -webkit-inline-flex;
+  font-family: monospace;
+  padding-inline-start: 1px;
+  cursor: default;
+ 
+  padding: 0px;
+
+  display: -webkit-inline-box;
+
+  height: 30px;
+  width: 140px;
+  
+   
+}
+
+[type="date"]::-webkit-inner-spin-button {
+  display: none;
+}
+[type="date"]::-webkit-calendar-picker-indicator {
+  display: none;
+}
+
+
+#cod{
+  width: 20px;
+  text-align: right;
+}
+.mmaaaa{
+  width: 45px;
+  text-align: right;
+}
+#lhead {
+  position: sticky;
+  left: 0px;
+  top: 0px;
+  z-index:1;
+  
+}
+#lhead input[type=text]{
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 9pt;
+  background-color: white;
+  border: none;
+  color: black;
+  width: 70px;
+  text-align: center;
+  font-weight: bold;
+  background-color: #DADADA;
+}
+#a input[type=text]{
+ 
+  width: 80px;
+}
+#m > input[type=text]{
+  width: 82px;
+}
+select{
+  width: 100%;
+}
+
+
+
+
+#ultimodia{
+  visibility: hidden;
+  position: absolute;
+}
+
+
+#tbponto{
+  position: relative;
+  top: 10px;
+}
+#resultado2{
+  position: relative;
+  top: 1400px;
+}
+#tbponto > input[type=date i] {
+  background-color: blueviolet;
+}
+
+
+
+
+.frmlogin{
+  margin: 10% auto auto auto;
+    max-width: 360px;
+    padding: 26px;
+    border-radius: 10px;
+    background: #f2f2f2;
+}
+.frmlogin >input{
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  box-sizing: border-box;
+  font: inherit;
+  font-family: inherit;
+  display: block;
+  width: 100%;
+  height: 34px;
+  padding: 1px 2px;
+  font-size: 14px;
+  line-height: 1.42857143;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+  transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+  margin: 10px 0px;
+}
+
+.submit {
+-webkit-text-size-adjust: 100%;
+-webkit-tap-highlight-color: rgba(0,0,0,0);
+box-sizing: border-box;
+font: inherit;
+font-family: inherit;
+font-weight: 400;
+text-align: center;
+white-space: nowrap;
+touch-action: manipulation;
+user-select: none;
+background-image: none;
+border: 1px solid transparent;
+padding: 10px 16px;
+font-size: 18px;
+line-height: 1.3333333;
+border-radius: 6px;
+display: block;
+-webkit-appearance: button;
+cursor: pointer;
+text-decoration: none;
+color: #fff;
+background-color: #286090;
+border-color: #204d74;
+width: 100%;
+margin: 16px 0px;
+}
+.submit:hover{
+  background-color: #28903f;
+}
+.inputform{
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  box-sizing: border-box;
+  font: inherit;
+  font-family: inherit;
+  display: block;
+  width: 100%;
+  height: 34px;
+  padding: 0px 2px;
+  font-size: 14px;
+  line-height: 1.42857143;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+  transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+  margin: 16px 0px;
+}
+#cadastrar {
+  
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  box-sizing: border-box;
+  font: inherit;
+  font-family: inherit;
+  font-weight: 400;
+  text-align: center;
+  white-space: nowrap;
+  touch-action: manipulation;
+  user-select: none;
+  background-image: none;
+  border: 1px solid transparent;
+  padding: 10px 16px;
+  font-size: 18px;
+  line-height: 1.3333333;
+  border-radius: 6px;
+  display: block;
+  -webkit-appearance: button;
+  cursor: pointer;
+  text-decoration: none;
+  color: #fff;
+  background-color: #286090;
+  border-color: #204d74;
+  width: 20%;
+  margin: 16px 0px;
+  }
+  #cadastrar:hover{
+    background-color: #28903f;
+  }
+  #btgravaempresa{
+    position: relative;
+    width: 20%;
+    top: 0px;
+    
+  }
+
+  .frmempresa{
+    margin:0% 0% 0% 0%;
+      max-width: 360px;
+      padding: 26px;
+      border-radius: 10px;
+      background: #f2f2f2;
+      
+  }
+  .frmempresa >input{
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    box-sizing: border-box;
+    font: inherit;
+    font-family: inherit;
+    display: block;
+    width: 100%;
+    height: 34px;
+    padding: 1px 2px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+    margin: 10px 0px;
+  }
+  .frmempregado{
+    margin:0% 0% 0% 0%;
+    padding: 26px;
+    border-radius: 10px;
+    background: #f2f2f2;
+      
+  }
+  .frmempregado >input{
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    box-sizing: border-box;
+    font: inherit;
+    font-family: inherit;
+    display: block;
+    width: 100%;
+    height: 34px;
+    padding: 1px 2px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+    margin: 10px 0px;
+  }
+  .submitfunc {
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    box-sizing: border-box;
+    font: inherit;
+    font-family: inherit;
+    font-weight: 400;
+    text-align: center;
+    white-space: nowrap;
+    touch-action: manipulation;
+    user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+    padding: 10px 16px;
+    font-size: 18px;
+    line-height: 1.3333333;
+    border-radius: 6px;
+    display: block;
+    -webkit-appearance: button;
+    cursor: pointer;
+    text-decoration: none;
+    color: #fff;
+    background-color: #286090;
+    border-color: #204d74;
+    width: 5%;
+    margin: 16px 0px;
+    }
+    .submitfunc:hover{
+      background-color: #28903f;
+    }
+    .idempresa{
+      
+      width: auto;
+    }
+
+    .submitponto {
+      
+      font: inherit;
+      font-family: inherit;
+      font-weight: 400;
+      text-align: center;
+      
+      
+      
+      
+      border: 1px solid transparent;
+      padding: 10px 16px;
+      font-size: 18px;
+      line-height: 1.3333333;
+      border-radius: 6px;
+     
+      cursor: pointer;
+      text-decoration: none;
+      color: #fff;
+      background-color: #286090;
+      border-color: #204d74;
+      position:relative;
+      left: 200px;
+      top:110px; 
+      
+      }
+      .submitponto:hover{
+        background-color: #28903f;
+      }
+      #divponto{
+        position:absolute;
+      }
+      #gravaponto{
+        left: 300px;
+        top:45px; 
+      }
+      #btncalcula{
+        position: absolute;
+        left: 200px;
+        top:175px; 
+      }
+   #resultado{
+     position:relative;
+     width: 25px;
+   }
+   #resultado>tbody>tr>td>input{
+     width: 175px;
+     text-align: center;
+   }
+   #tabela_empregados td, #tabela_empregados th{
+    border-collapse: collapse;
+    border: 1px solid black;
+   }

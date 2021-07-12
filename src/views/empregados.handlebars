@@ -1,0 +1,117 @@
+<h1>Cadastro Funcionário</h1>
+    <form id= 'funcionario' class='frmempregado'action="/gravaempregado" method="post">
+        <div id = 'dados'>
+            <label for ="cod:funcionario">Nome:</label> <br>
+            <input required id='cod:funcionario' name = 'nome' type = 'text' size="30" maxlength="30" onkeyup='filtra()'/><br>
+            <label for = "cpf:funcionario">CPF:</label> <br>
+            <input required ='cpf:funcionario' name='cpf'type = 'text' size="10" maxlength="14" data-js ="cpf"/><br>
+            <label for = "ctps:funcionario">CTPS:</label> <br>
+            <input id='ctps:funcionario' name='ctps'type = 'text' size="10" maxlength="14"/><br>
+            <label class= 'idempresa' for='idempresa' size='100'>Empresa:</label><br>
+                <select  name="idempresa" id="idempresa" class='idempresa'>
+                    {{#each empresas}}
+                    <option value={{id}}>{{razao_social}}</option>
+                    {{/each}}
+                </select>
+
+        </div>
+        <div id ='controles'>
+            
+            <input type ='submit' class='submitfunc' value = 'Grava' id= 'btgrava' formaction='/gravaempregado'>
+            
+           
+            
+        </div>
+        <div id=horario>
+        <table id='tbempregados'> 
+            
+               <tr>
+                   <th>Dia da semana</th>
+                   <th>Justificativa</th>
+                   <th>Entrada</th>
+                   <th>Entrada do Intervalo</th>
+                   <th>Saída do Intervalo</th>
+                   <th>Saída</th>
+               </tr> 
+               <tr>
+                <td>Segunda-Feira</td>
+                <td><select name='segjustificativa'>
+                    <option value="0">Normal</option>
+                    <option value="1">Folga</option>
+                </select></td>
+                <td><input type='time' id ='Entrada:segunda'name='segentrada'></td>
+                <td><input type='time' id ='Entradaintervalo:segunda' name='segentradainter'></td>
+                <td><input type='time' id ='saidaintervalo:segunda'name='segsaidainter'></td>
+                <td><input type='time' id ='saida:segunda'name='segsaida'></td>
+               </tr>
+               <tr>
+                <td>terca-Feira</td>
+                <td><select name='terjustificativa'>
+                    <option value="0">Normal</option>
+                    <option value="1">Folga</option>
+                </select></td>
+                <td><input type='time' id ='Entrada:terca'name='terentrada'></td>
+                <td><input type='time' id ='Entradaintervalo:terca'name='terentradainter'></td>
+                <td><input type='time' id ='saidaintervalo:terca'name='tersaidainter'></td>
+                <td><input type='time' id ='saida:terca'name='tersaida'></td>
+               </tr>
+               <tr>
+                <td>Quarta-Feira</td>
+                <td><select name='quajustificativa'>
+                    <option value="0">Normal</option>
+                    <option value="1">Folga</option>
+                </select></td>
+                <td><input type='time' id ='Entrada:quarta'name='quaentrada'></td>
+                <td><input type='time' id ='Entradaintervalo:quarta'name='quaentradainter'></td>
+                <td><input type='time' id ='saidaintervalo:quarta'name='quasaidainter'></td>
+                <td><input type='time' id ='saida:quarta'name='quasaida'></td>
+               </tr>
+               
+                <tr>
+                <td>Quinta-Feira</td>
+                <td><select name='quijustificativa'>
+                    <option value="0">Normal</option>
+                    <option value="1">Folga</option>
+                </select></td>
+                <td><input type='time' id ='Entrada:quinta' name='quientrada'></td>
+                <td><input type='time' id ='Entradaintervalo:quinta' name='quientradainter'></td>
+                <td><input type='time' id ='saidaintervalo:quinta'name='quisaidainter'></td>
+                <td><input type='time' id ='saida:quinta'name='quisaida'></td>
+               </tr>
+               <tr>
+                <td>Sexta-Feira</td>
+                <td><select name='sexjustificativa'>
+                    <option value="0">Normal</option>
+                    <option value="1">Folga</option>
+                </select></td>
+                <td><input type='time' id ='Entrada:Sexta' name='sexentrada'></td>
+                <td><input type='time' id ='Entradaintervalo:Sexta'name='sexentradainter'></td>
+                <td><input type='time' id ='saidaintervalo:Sexta'name='sexsaidainter'></td>
+                <td><input type='time' id ='saida:Sexta'name='sexsaida'></td>
+               </tr>
+               <tr>
+                <td>Sábado</td>
+                <td><select name='sabjustificativa'>
+                    <option value="0">Normal</option>
+                    <option value="1">Folga</option>
+                </select></td>
+                <td><input type='time' id ='Entrada:Sabado'name='sabentrada'></td>
+                <td><input type='time' id ='Entradaintervalo:Sabado'name='sabentradainter'></td>
+                <td><input type='time' id ='saidaintervalo:sabado'name='sabsaidainter'></td>
+                <td><input type='time' id ='saida:sabado'name='sabsaida'></td>
+               </tr>
+               <td>Domingo</td>
+                <td><select name='domjustificativa'>
+                    <option value="0">Normal</option>
+                    <option value="1">Folga</option>
+                </select></td>
+                <td><input type='time' id ='Entrada:domingo' name='domentrada'></td>
+                <td><input type='time' id ='Entradaintervalo:domingo' name='domentradainter'></td>
+                <td><input type='time' id ='saidaintervalo:domingo'name='domsaidainter'></td>
+                <td><input type='time' id ='saida:domingo'name='domsaida'></td>
+               </tr>
+            
+        </table>
+        </div>
+        
+    </form>
